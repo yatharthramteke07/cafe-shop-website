@@ -1,0 +1,154 @@
+.menu-section {
+  padding: 120px 0 80px;
+  background: var(--cream);
+  min-height: 100vh;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.menu-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 12px;
+}
+
+.menu-section .section-title {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+}
+
+.menu-section .section-subtitle {
+  margin-bottom: 0;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 22px;
+  border: 1.5px solid var(--taupe);
+  background: transparent;
+  color: var(--charcoal-light);
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+}
+
+.filter-btn.active {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: var(--warm-white);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.menu-card {
+  background: var(--warm-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition-slow);
+  border: 1px solid rgba(232, 220, 200, 0.4);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.menu-card-body {
+  padding: 28px 28px 16px;
+  flex: 1;
+}
+
+.menu-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.menu-card-top h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+.badge {
+  background: var(--cream);
+  color: var(--terracotta);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.menu-card-desc {
+  color: var(--warm-gray);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.menu-card-footer {
+  padding: 20px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--cream);
+}
+
+.price {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+@media (max-width: 768px) {
+  .menu-section {
+    padding: 100px 0 60px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .menu-section .section-title {
+    font-size: 2rem;
+  }
+}
