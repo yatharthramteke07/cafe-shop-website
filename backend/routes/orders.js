@@ -6,7 +6,7 @@ const Cart = require('../models/Cart');
 // Create order from cart
 router.post('/', async (req, res) => {
   try {
-    const { userId, notes } = req.body;
+    const { userId, notes, paymentMethod } = req.body;
     const cartItems = await Cart.find({ user: userId }).populate('product');
     if (cartItems.length === 0) {
       return res.status(400).json({ message: 'Cart is empty' });
@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
       subtotal: item.price * item.quantity
     }));
 
-    const totalAmount = items.reduce((sum, item) => sum + item.subtotal, 0);
+    const totalAmount = items.reduce((sum, item) => sum + item.subtotal, 0) * 1.1; // Include 10% tax
     const orderNumber = 'ORD-' + Date.now().toString(36).toUpperCase();
 
     const order = new Order({
@@ -28,6 +28,7 @@ router.post('/', async (req, res) => {
       orderNumber,
       items,
       totalAmount,
+      paymentMethod: paymentMethod || 'CASH_ON_DELIVERY',
       notes: notes || ''
     });
 

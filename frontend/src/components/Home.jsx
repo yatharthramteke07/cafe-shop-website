@@ -80,7 +80,15 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="about-visual">
+            <div 
+              className="about-visual"
+              style={{
+                backgroundImage: 'url(https://images.unsplash.com/photo-1512568400610-62da28bc8a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed'
+              }}
+            >
               <div className="about-image-card">
                 <Coffee size={80} strokeWidth={1} />
                 <p className="about-image-text">Perfection in every pour</p>

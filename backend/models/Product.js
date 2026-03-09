@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const productSchema = new mongoose.Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
-  category: { type: String, required: true, enum: ['espresso', 'latte', 'specialty', 'cold'] },
+  category: { type: String, required: true, enum: ['coffee', 'breakfast', 'snacks'] },
   price: { type: Number, required: true },
   imageUrl: { type: String, default: '' },
   badge: { type: String, default: '' },

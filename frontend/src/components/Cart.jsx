@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { Trash2, Minus, Plus, ShoppingBag, ArrowRight } from 'lucide-react';
 import '../styles/Cart.css';
 
 const Cart = () => {
+  const navigate = useNavigate();
   const { cart, total, removeItem, updateItem, clearCart } = useCart();
 
   if (cart.length === 0) {
@@ -82,7 +83,7 @@ const Cart = () => {
               <span>${(total * 1.1).toFixed(2)}</span>
             </div>
 
-            <button className="btn btn-primary btn-block">
+            <button className="btn btn-primary btn-block" onClick={() => navigate('/checkout')}>
               Checkout <ArrowRight size={14} />
             </button>
             <button className="btn btn-secondary btn-block" onClick={clearCart}>

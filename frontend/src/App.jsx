@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Menu from './components/Menu';
 import Cart from './components/Cart';
+import Checkout from './components/Checkout';
 import Orders from './components/Orders';
 import Login from './components/Auth';
 import './styles/App.css';
@@ -21,6 +22,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/menu" element={<Menu />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="/orders" element={<Orders />} />
               <Route path="/login" element={<Login />} />
             </Routes>

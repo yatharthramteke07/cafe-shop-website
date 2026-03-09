@@ -57,7 +57,7 @@ const Menu = () => {
     }
   };
 
-  const categories = ['all', 'espresso', 'latte', 'specialty', 'cold'];
+  const categories = ['all', 'coffee', 'breakfast', 'snacks'];
 
   return (
     <section className="menu-section">
